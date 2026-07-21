@@ -1,0 +1,23 @@
+name: Harness
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-harness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check repository harness
+        run: python tools/harness_check.py
+      - name: Test harness checker
+        run: python -m unittest discover -s tests -v
+

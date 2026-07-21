@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "name": "replace-with-project-name",
+  "summary": "Replace with one sentence describing the user and outcome.",
+  "commands": {
+    "setup": "replace-with-setup-command",
+    "start": "replace-with-start-command",
+    "test": "replace-with-test-command",
+    "verify": "python tools/harness_check.py"
+  },
+  "documentation": {
+    "architecture": "ARCHITECTURE.md",
+    "productSpecs": "docs/product-specs/index.md",
+    "designDocs": "docs/design-docs/index.md"
+  }
+}
+
