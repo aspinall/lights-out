@@ -34,7 +34,7 @@ A series definition describes racing concepts rather than machine-specific paths
 
 ## Current status
 
-Lights Out is in the product-definition and architecture phase. The product specification, application boundaries, first vertical-slice plan, and fictional four-round MX-5 Sprint Cup reference fixture are established. The desktop technology stack and exact Assetto Corsa compatibility contract are the next decisions.
+Lights Out is in the product-definition and architecture phase. The product specification, application boundaries, first vertical-slice plan, and fictional four-round MX-5 Sprint Cup reference fixture are established. Vanilla Assetto Corsa on Windows is the first simulator target; its exact compatibility contract and the desktop technology stack are the next technical decisions.
 
 The first vertical slice will run the [Lights Out MX-5 Sprint Cup](tests/fixtures/reference-series/README.md) from definition import through a launched race, accepted result, and updated standings. Broader rule and installation support will be added from verified examples after that complete path works.
 
@@ -81,6 +81,7 @@ Before making structural or implementation changes, read [AGENTS.md](AGENTS.md),
 - Downloading or redistributing mods and DLC
 - Replacing Assetto Corsa's physics, AI, graphics, or in-session interface
 - Multiplayer league administration or live race control
+- Content Manager integration in the first vertical slice
 - Supporting Assetto Corsa Competizione or other simulators
 - Claiming support for regulations that are not represented in the versioned series format
 

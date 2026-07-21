@@ -14,6 +14,8 @@ The architecture must keep sporting rules testable without Assetto Corsa, protec
 
 Lights Out will be a local-first Windows desktop application. It is one deployable application with a local database and explicit internal boundaries; it is not initially split into local services.
 
+The first simulator adapter targets vanilla Assetto Corsa without Content Manager. Third-party launchers may be added later through separate adapters and must not change the season domain contract.
+
 ### Components and dependency direction
 
 ```text
@@ -110,7 +112,7 @@ Rejected because a single-user offline desktop application does not yet justify 
 
 ### Build around a specific third-party launcher
 
-Rejected as the core architecture. Launcher-specific support can be an adapter after its contract and user demand are established.
+Rejected as the core architecture. The first slice targets vanilla Assetto Corsa; launcher-specific support such as Content Manager can be an adapter after its contract and user demand are established.
 
 ## Consequences and risks
 

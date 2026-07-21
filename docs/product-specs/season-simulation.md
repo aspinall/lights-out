@@ -22,6 +22,7 @@ The first release does not:
 - replace Assetto Corsa's physics, AI, graphics, or in-session behavior;
 - administer multiplayer leagues or synchronize seasons between computers;
 - support Assetto Corsa Competizione or another simulator;
+- integrate with Content Manager in the first release;
 - scrape proprietary championship data from the web; or
 - infer a trustworthy result when the simulator output is absent or ambiguous.
 
@@ -133,7 +134,7 @@ The first vertical slice uses the fictional Lights Out MX-5 Sprint Cup defined i
 
 ## Open questions
 
-- Which Windows and Assetto Corsa installations and launchers define the first supported compatibility matrix? Owner: Engineering.
+- Which vanilla Assetto Corsa Steam build and supported Windows versions define the first compatibility matrix? Owner: Engineering.
 - Which session output provides the most stable automatic result contract, and what manual import formats are viable? Owner: Engineering.
 - Which grid, weather, pit-stop, penalty, ballast, and multi-race rules belong in format version 1? Owner: Product.
 - What backup, export, and accepted-result correction workflow provides an adequate audit trail? Owner: Product and Engineering.

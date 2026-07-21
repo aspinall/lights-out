@@ -33,12 +33,12 @@ No application framework has been selected and the canonical setup, start, and t
 - [ ] A correlated result is retained, normalized, accepted idempotently, and reflected in standings.
 - [ ] Restarting at every persisted lifecycle state offers the correct next or recovery action.
 - [ ] Focused tests and the canonical repository verification command pass.
-- [ ] Supported Windows, Assetto Corsa, and launcher variants plus known limitations are documented.
+- [ ] Supported Windows and vanilla Assetto Corsa variants plus known limitations are documented; the slice does not require Content Manager.
 
 ## Steps
 
 - [ ] Complete the reference fixture set: the MX-5 Sprint Cup definition, normalized results, and expected standings are checked in; installation and launch-plan fixtures remain after the Assetto Corsa contract research.
-- [ ] Research and record the supported Assetto Corsa installation, launch, and result contracts; define the initial compatibility matrix.
+- [ ] Research and record the vanilla Assetto Corsa installation, configuration, launch, and result contracts; define the initial Windows/Steam compatibility matrix without Content Manager.
 - [ ] Select the desktop stack with a short proof covering Windows packaging, accessible UI, SQLite migrations, typed JSON validation, process launch, and structural dependency checks.
 - [ ] Replace all placeholder canonical commands in `harness/project.json`, add CI coverage, and enforce dependency direction.
 - [ ] Implement the versioned series schema, two-phase validation, normalized definition model, and actionable diagnostics.
@@ -57,6 +57,7 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Identified the empty-stack scaffold and unresolved Assetto Corsa compatibility contract as the first implementation risks.
 - 2026-07-21: Replaced the scaffold README with the Lights Out product flow, current status, architecture summary, documentation map, and development entry points.
 - 2026-07-21: Selected the fictional four-round Lights Out MX-5 Sprint Cup as the reference series and added its draft v1 definition, normalized results, deterministic expected standings, and fixture integrity tests.
+- 2026-07-21: Selected vanilla Assetto Corsa on Windows as the first simulator compatibility target; Content Manager support is deferred to a separate future adapter.
 
 ## Decision log
 
@@ -65,6 +66,7 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Make one reference series the walking skeleton; breadth of rules follows only after import-to-standings works at the real desktop boundary.
 - 2026-07-21: Keep exact Assetto Corsa configuration and result details out of the domain until verified against an explicit compatibility target.
 - 2026-07-21: Use the official Mazda MX-5 Cup and four compact official circuits for the reference series; keep content references logical until verified installation identifiers are captured by the simulator-adapter research.
+- 2026-07-21: Target vanilla Assetto Corsa before third-party launchers so the first integration contract depends only on the simulator and official Steam installation.
 
 ## Risks and recovery
 
@@ -75,7 +77,7 @@ No application framework has been selected and the canonical setup, start, and t
 - **Schema or database evolution:** changes may strand saved seasons. Snapshot definitions, use migrations and pre-upgrade backups, and build replay/restore fixtures before user-data releases.
 - **Stack mismatch:** a framework may package well but make process integration or accessibility poor. Require a disposable proof before committing the repository structure.
 
-Human judgment is required to choose the reference series, approve the initial compatibility matrix, and decide which sporting rules enter definition format version 1.
+Human judgment is required to approve the researched vanilla Assetto Corsa compatibility matrix and decide which additional sporting rules enter definition format version 1.
 
 ## Verification
 
