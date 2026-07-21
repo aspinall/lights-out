@@ -1,0 +1,242 @@
+{
+  "format": "lights-out-series",
+  "schemaVersion": 1,
+  "id": "lights-out-mx5-sprint-cup",
+  "name": "Lights Out MX-5 Sprint Cup",
+  "description": "A fictional four-round single-make sprint championship used as the first Lights Out reference series.",
+  "content": {
+    "cars": [
+      {
+        "id": "mazda-mx5-cup",
+        "displayName": "Mazda MX-5 Cup",
+        "source": {
+          "kind": "official-dlc",
+          "name": "Japanese Pack"
+        }
+      }
+    ],
+    "tracks": [
+      {
+        "id": "magione",
+        "displayName": "Circuito di Magione",
+        "source": { "kind": "official-content" },
+        "layouts": [{ "id": "full", "displayName": "Full Circuit" }]
+      },
+      {
+        "id": "vallelunga",
+        "displayName": "Autodromo Vallelunga",
+        "source": { "kind": "official-content" },
+        "layouts": [{ "id": "club", "displayName": "Club Circuit" }]
+      },
+      {
+        "id": "silverstone",
+        "displayName": "Silverstone Circuit",
+        "source": { "kind": "official-content" },
+        "layouts": [{ "id": "national", "displayName": "National Circuit" }]
+      },
+      {
+        "id": "brands-hatch",
+        "displayName": "Brands Hatch",
+        "source": {
+          "kind": "official-dlc",
+          "name": "Dream Pack 3"
+        },
+        "layouts": [{ "id": "indy", "displayName": "Indy Circuit" }]
+      }
+    ]
+  },
+  "entrants": [
+    {
+      "id": "alex-morgan",
+      "displayName": "Alex Morgan",
+      "shortName": "AMO",
+      "control": "player",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-01"
+    },
+    {
+      "id": "jamie-chen",
+      "displayName": "Jamie Chen",
+      "shortName": "JCH",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-02",
+      "ai": { "skill": 96, "aggression": 55 }
+    },
+    {
+      "id": "sofia-rossi",
+      "displayName": "Sofia Rossi",
+      "shortName": "SRO",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-03",
+      "ai": { "skill": 95, "aggression": 50 }
+    },
+    {
+      "id": "theo-martin",
+      "displayName": "Theo Martin",
+      "shortName": "TMA",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-04",
+      "ai": { "skill": 93, "aggression": 60 }
+    },
+    {
+      "id": "maya-patel",
+      "displayName": "Maya Patel",
+      "shortName": "MPA",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-05",
+      "ai": { "skill": 92, "aggression": 48 }
+    },
+    {
+      "id": "luca-weber",
+      "displayName": "Luca Weber",
+      "shortName": "LWE",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-06",
+      "ai": { "skill": 91, "aggression": 62 }
+    },
+    {
+      "id": "erin-brooks",
+      "displayName": "Erin Brooks",
+      "shortName": "EBR",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-07",
+      "ai": { "skill": 90, "aggression": 52 }
+    },
+    {
+      "id": "noah-silva",
+      "displayName": "Noah Silva",
+      "shortName": "NSI",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-08",
+      "ai": { "skill": 89, "aggression": 58 }
+    },
+    {
+      "id": "freya-clarke",
+      "displayName": "Freya Clarke",
+      "shortName": "FCL",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-09",
+      "ai": { "skill": 88, "aggression": 47 }
+    },
+    {
+      "id": "kai-tanaka",
+      "displayName": "Kai Tanaka",
+      "shortName": "KTA",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-10",
+      "ai": { "skill": 87, "aggression": 64 }
+    },
+    {
+      "id": "ava-laurent",
+      "displayName": "Ava Laurent",
+      "shortName": "ALA",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-11",
+      "ai": { "skill": 86, "aggression": 50 }
+    },
+    {
+      "id": "owen-price",
+      "displayName": "Owen Price",
+      "shortName": "OPR",
+      "control": "ai",
+      "carRef": "mazda-mx5-cup",
+      "liveryRef": "cup-12",
+      "ai": { "skill": 85, "aggression": 56 }
+    }
+  ],
+  "calendar": [
+    {
+      "id": "round-1-magione",
+      "name": "Umbrian Opener",
+      "sequence": 1,
+      "trackRef": "magione",
+      "layoutRef": "full",
+      "conditions": { "weather": "clear", "timeOfDay": "13:00" },
+      "sessions": [
+        { "id": "qualifying", "kind": "qualifying", "durationMinutes": 10 },
+        {
+          "id": "race",
+          "kind": "race",
+          "laps": 12,
+          "grid": { "kind": "previous-session-classification", "sessionRef": "qualifying" }
+        }
+      ]
+    },
+    {
+      "id": "round-2-vallelunga-club",
+      "name": "Vallelunga Club Trophy",
+      "sequence": 2,
+      "trackRef": "vallelunga",
+      "layoutRef": "club",
+      "conditions": { "weather": "clear", "timeOfDay": "14:00" },
+      "sessions": [
+        { "id": "qualifying", "kind": "qualifying", "durationMinutes": 10 },
+        {
+          "id": "race",
+          "kind": "race",
+          "laps": 14,
+          "grid": { "kind": "previous-session-classification", "sessionRef": "qualifying" }
+        }
+      ]
+    },
+    {
+      "id": "round-3-silverstone-national",
+      "name": "Silverstone Sprint",
+      "sequence": 3,
+      "trackRef": "silverstone",
+      "layoutRef": "national",
+      "conditions": { "weather": "clear", "timeOfDay": "13:00" },
+      "sessions": [
+        { "id": "qualifying", "kind": "qualifying", "durationMinutes": 10 },
+        {
+          "id": "race",
+          "kind": "race",
+          "laps": 12,
+          "grid": { "kind": "previous-session-classification", "sessionRef": "qualifying" }
+        }
+      ]
+    },
+    {
+      "id": "round-4-brands-hatch-indy",
+      "name": "Brands Hatch Finale",
+      "sequence": 4,
+      "trackRef": "brands-hatch",
+      "layoutRef": "indy",
+      "conditions": { "weather": "clear", "timeOfDay": "15:00" },
+      "sessions": [
+        { "id": "qualifying", "kind": "qualifying", "durationMinutes": 10 },
+        {
+          "id": "race",
+          "kind": "race",
+          "laps": 15,
+          "grid": { "kind": "previous-session-classification", "sessionRef": "qualifying" }
+        }
+      ]
+    }
+  ],
+  "championship": {
+    "scoring": {
+      "classifiedFinishersOnly": true,
+      "pointsByPosition": [25, 18, 15, 12, 10, 8, 6, 4, 2, 1],
+      "bonuses": []
+    },
+    "classification": {
+      "minimumRaceDistancePercent": 75
+    },
+    "droppedScores": 0,
+    "tieBreakers": [
+      { "kind": "finish-countback" },
+      { "kind": "most-recent-race-result" }
+    ]
+  }
+}

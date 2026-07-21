@@ -34,9 +34,9 @@ A series definition describes racing concepts rather than machine-specific paths
 
 ## Current status
 
-Lights Out is in the product-definition and architecture phase. The product specification, application boundaries, and first vertical-slice plan are established; the desktop technology stack and exact Assetto Corsa compatibility target are the next decisions.
+Lights Out is in the product-definition and architecture phase. The product specification, application boundaries, first vertical-slice plan, and fictional four-round MX-5 Sprint Cup reference fixture are established. The desktop technology stack and exact Assetto Corsa compatibility contract are the next decisions.
 
-The first vertical slice will support one representative series from definition import through a launched race, accepted result, and updated standings. Broader rule and installation support will be added from verified examples after that complete path works.
+The first vertical slice will run the [Lights Out MX-5 Sprint Cup](tests/fixtures/reference-series/README.md) from definition import through a launched race, accepted result, and updated standings. Broader rule and installation support will be added from verified examples after that complete path works.
 
 ## Architecture
 

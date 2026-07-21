@@ -127,10 +127,13 @@ On restart, Lights Out returns to the last persisted state. It identifies an int
 
 The initial product uses local structured events for import, validation, staging, launch, result, recovery, and completion transitions. Diagnostic export is user-initiated and must redact local usernames, arbitrary paths, and content names unless the user explicitly includes them. The measures and decision owners are defined in [the product overview](../PRODUCT.md#success-measures).
 
+## Reference series
+
+The first vertical slice uses the fictional Lights Out MX-5 Sprint Cup defined in the [golden reference fixtures](../../tests/fixtures/reference-series/README.md). It contains 12 entrants and four qualifying-plus-race rounds at Magione, Vallelunga Club, Silverstone National, and Brands Hatch Indy. The deliberately simple scoring rules and expected results are the first executable examples for definition format version 1 and the standings engine.
+
 ## Open questions
 
 - Which Windows and Assetto Corsa installations and launchers define the first supported compatibility matrix? Owner: Engineering.
-- Which real-world series should be the reference fixture for the first vertical slice? Owner: Product.
 - Which session output provides the most stable automatic result contract, and what manual import formats are viable? Owner: Engineering.
 - Which grid, weather, pit-stop, penalty, ballast, and multi-race rules belong in format version 1? Owner: Product.
 - What backup, export, and accepted-result correction workflow provides an adequate audit trail? Owner: Product and Engineering.

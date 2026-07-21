@@ -37,7 +37,7 @@ No application framework has been selected and the canonical setup, start, and t
 
 ## Steps
 
-- [ ] Choose the reference series and write golden definition, installation, launch, and result fixtures with expected standings.
+- [ ] Complete the reference fixture set: the MX-5 Sprint Cup definition, normalized results, and expected standings are checked in; installation and launch-plan fixtures remain after the Assetto Corsa contract research.
 - [ ] Research and record the supported Assetto Corsa installation, launch, and result contracts; define the initial compatibility matrix.
 - [ ] Select the desktop stack with a short proof covering Windows packaging, accessible UI, SQLite migrations, typed JSON validation, process launch, and structural dependency checks.
 - [ ] Replace all placeholder canonical commands in `harness/project.json`, add CI coverage, and enforce dependency direction.
@@ -56,6 +56,7 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Product spec, system architecture, design decision, and initial vertical-slice plan created.
 - 2026-07-21: Identified the empty-stack scaffold and unresolved Assetto Corsa compatibility contract as the first implementation risks.
 - 2026-07-21: Replaced the scaffold README with the Lights Out product flow, current status, architecture summary, documentation map, and development entry points.
+- 2026-07-21: Selected the fictional four-round Lights Out MX-5 Sprint Cup as the reference series and added its draft v1 definition, normalized results, deterministic expected standings, and fixture integrity tests.
 
 ## Decision log
 
@@ -63,6 +64,7 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Use versioned JSON plus JSON Schema for portable definitions and SQLite for mutable seasons; interchange and transactional state have different requirements.
 - 2026-07-21: Make one reference series the walking skeleton; breadth of rules follows only after import-to-standings works at the real desktop boundary.
 - 2026-07-21: Keep exact Assetto Corsa configuration and result details out of the domain until verified against an explicit compatibility target.
+- 2026-07-21: Use the official Mazda MX-5 Cup and four compact official circuits for the reference series; keep content references logical until verified installation identifiers are captured by the simulator-adapter research.
 
 ## Risks and recovery
 

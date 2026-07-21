@@ -1,0 +1,82 @@
+{
+  "fixtureVersion": 1,
+  "seriesId": "lights-out-mx5-sprint-cup",
+  "raceResults": [
+    {
+      "eventId": "round-1-magione",
+      "sessionId": "race",
+      "scheduledLaps": 12,
+      "classification": [
+        { "position": 1, "entrantId": "alex-morgan", "status": "classified", "lapsCompleted": 12 },
+        { "position": 2, "entrantId": "jamie-chen", "status": "classified", "lapsCompleted": 12 },
+        { "position": 3, "entrantId": "sofia-rossi", "status": "classified", "lapsCompleted": 12 },
+        { "position": 4, "entrantId": "theo-martin", "status": "classified", "lapsCompleted": 12 },
+        { "position": 5, "entrantId": "maya-patel", "status": "classified", "lapsCompleted": 12 },
+        { "position": 6, "entrantId": "luca-weber", "status": "classified", "lapsCompleted": 12 },
+        { "position": 7, "entrantId": "erin-brooks", "status": "classified", "lapsCompleted": 12 },
+        { "position": 8, "entrantId": "noah-silva", "status": "classified", "lapsCompleted": 12 },
+        { "position": 9, "entrantId": "freya-clarke", "status": "classified", "lapsCompleted": 12 },
+        { "position": 10, "entrantId": "kai-tanaka", "status": "classified", "lapsCompleted": 12 },
+        { "position": 11, "entrantId": "ava-laurent", "status": "classified", "lapsCompleted": 12 },
+        { "position": 12, "entrantId": "owen-price", "status": "classified", "lapsCompleted": 12 }
+      ]
+    },
+    {
+      "eventId": "round-2-vallelunga-club",
+      "sessionId": "race",
+      "scheduledLaps": 14,
+      "classification": [
+        { "position": 1, "entrantId": "jamie-chen", "status": "classified", "lapsCompleted": 14 },
+        { "position": 2, "entrantId": "sofia-rossi", "status": "classified", "lapsCompleted": 14 },
+        { "position": 3, "entrantId": "alex-morgan", "status": "classified", "lapsCompleted": 14 },
+        { "position": 4, "entrantId": "maya-patel", "status": "classified", "lapsCompleted": 14 },
+        { "position": 5, "entrantId": "theo-martin", "status": "classified", "lapsCompleted": 14 },
+        { "position": 6, "entrantId": "erin-brooks", "status": "classified", "lapsCompleted": 14 },
+        { "position": 7, "entrantId": "noah-silva", "status": "classified", "lapsCompleted": 14 },
+        { "position": 8, "entrantId": "luca-weber", "status": "classified", "lapsCompleted": 14 },
+        { "position": 9, "entrantId": "kai-tanaka", "status": "classified", "lapsCompleted": 14 },
+        { "position": 10, "entrantId": "freya-clarke", "status": "classified", "lapsCompleted": 14 },
+        { "position": 11, "entrantId": "owen-price", "status": "classified", "lapsCompleted": 14 },
+        { "position": 12, "entrantId": "ava-laurent", "status": "classified", "lapsCompleted": 14 }
+      ]
+    },
+    {
+      "eventId": "round-3-silverstone-national",
+      "sessionId": "race",
+      "scheduledLaps": 12,
+      "classification": [
+        { "position": 1, "entrantId": "sofia-rossi", "status": "classified", "lapsCompleted": 12 },
+        { "position": 2, "entrantId": "alex-morgan", "status": "classified", "lapsCompleted": 12 },
+        { "position": 3, "entrantId": "jamie-chen", "status": "classified", "lapsCompleted": 12 },
+        { "position": 4, "entrantId": "theo-martin", "status": "classified", "lapsCompleted": 12 },
+        { "position": 5, "entrantId": "luca-weber", "status": "classified", "lapsCompleted": 12 },
+        { "position": 6, "entrantId": "maya-patel", "status": "classified", "lapsCompleted": 12 },
+        { "position": 7, "entrantId": "freya-clarke", "status": "classified", "lapsCompleted": 12 },
+        { "position": 8, "entrantId": "erin-brooks", "status": "classified", "lapsCompleted": 12 },
+        { "position": 9, "entrantId": "noah-silva", "status": "classified", "lapsCompleted": 12 },
+        { "position": 10, "entrantId": "ava-laurent", "status": "classified", "lapsCompleted": 12 },
+        { "position": 11, "entrantId": "kai-tanaka", "status": "dnf", "lapsCompleted": 8 },
+        { "position": 12, "entrantId": "owen-price", "status": "dnf", "lapsCompleted": 5 }
+      ]
+    },
+    {
+      "eventId": "round-4-brands-hatch-indy",
+      "sessionId": "race",
+      "scheduledLaps": 15,
+      "classification": [
+        { "position": 1, "entrantId": "alex-morgan", "status": "classified", "lapsCompleted": 15 },
+        { "position": 2, "entrantId": "jamie-chen", "status": "classified", "lapsCompleted": 15 },
+        { "position": 3, "entrantId": "sofia-rossi", "status": "classified", "lapsCompleted": 15 },
+        { "position": 4, "entrantId": "maya-patel", "status": "classified", "lapsCompleted": 15 },
+        { "position": 5, "entrantId": "luca-weber", "status": "classified", "lapsCompleted": 15 },
+        { "position": 6, "entrantId": "theo-martin", "status": "classified", "lapsCompleted": 15 },
+        { "position": 7, "entrantId": "erin-brooks", "status": "classified", "lapsCompleted": 15 },
+        { "position": 8, "entrantId": "noah-silva", "status": "classified", "lapsCompleted": 15 },
+        { "position": 9, "entrantId": "freya-clarke", "status": "classified", "lapsCompleted": 15 },
+        { "position": 10, "entrantId": "kai-tanaka", "status": "classified", "lapsCompleted": 15 },
+        { "position": 11, "entrantId": "ava-laurent", "status": "classified", "lapsCompleted": 15 },
+        { "position": 12, "entrantId": "owen-price", "status": "classified", "lapsCompleted": 15 }
+      ]
+    }
+  ]
+}
