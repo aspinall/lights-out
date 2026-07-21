@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "name": "replace-with-project-name",
-  "summary": "Replace with one sentence describing the user and outcome.",
+  "name": "lights-out",
+  "summary": "A desktop season manager that turns data-driven race series into playable Assetto Corsa championships.",
   "commands": {
     "setup": "replace-with-setup-command",
     "start": "replace-with-start-command",
