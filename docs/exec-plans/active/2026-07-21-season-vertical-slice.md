@@ -20,7 +20,7 @@ The slice establishes the extensible path to “any race series” without prete
 - [Design principles](../../DESIGN.md)
 - [Security baseline](../../SECURITY.md)
 
-The desktop stack is selected in [Design 0003](../../design-docs/0003-desktop-technology-stack.md): C#/.NET 10, WinUI 3, EF Core/SQLite, and Corvus JSON Schema tooling. The local machine has no .NET SDK and the canonical setup, start, and test commands in `harness/project.json` remain template placeholders until the walking-skeleton proof makes them executable.
+The desktop stack is selected in [Design 0003](../../design-docs/0003-desktop-technology-stack.md): C#/.NET 10, WinUI 3, EF Core/SQLite, and Corvus JSON Schema tooling. A pinned repo-local SDK and isolated caches avoid machine-wide development dependencies. The canonical start and application-test commands remain template placeholders until the walking-skeleton proof makes them executable.
 
 ## Acceptance criteria
 
@@ -63,6 +63,7 @@ The desktop stack is selected in [Design 0003](../../design-docs/0003-desktop-te
 - 2026-07-21: Controlled launch attempt showed that plain `acs.exe` invocation is redirected by Steam to the vanilla launcher, which rewrites `race.ini`; no result was produced, and the exact original configuration was restored by verified hash. A Steam-app-environment retry stopped safely at preflight because redirected launcher processes remained active.
 - 2026-07-21: After closing redirected launcher processes, the retry with child-only `SteamAppId` and `SteamGameId` set to `244210` launched `acs.exe` directly, consumed the staged qualifying/race config, produced a new result, and restored the exact original config. The zero-lap classification is retained as a rejection fixture.
 - 2026-07-21: Selected C#/.NET 10 LTS, WinUI 3 on Windows App SDK 2.2, EF Core/SQLite, Corvus JSON Schema tooling, xUnit, and Appium/UI Automation. The machine has no .NET SDK, so installation and a disposable packaging/accessibility/integration proof are the next gate.
+- 2026-07-21: Added an idempotent, non-admin repo-local environment pinned to .NET SDK 10.0.302. SDK files, CLI state, NuGet packages/cache, and temporary build files live under ignored `.tools/`; no persistent `PATH` or registry changes are made.
 
 ## Decision log
 
@@ -78,6 +79,7 @@ The desktop stack is selected in [Design 0003](../../design-docs/0003-desktop-te
 - 2026-07-21: Adopt child-only `SteamAppId`/`SteamGameId=244210` plus direct 64-bit `acs.exe` as the verified vanilla handoff for the observed profile. Never accept a race result solely because `raceResult` is present; require evidence of completed laps and configured completion rules.
 - 2026-07-21: Build the Windows-only client with C#/.NET 10 and WinUI 3; isolate UI, persistence, and Assetto Corsa behind ordinary .NET project boundaries so WPF can replace only the desktop shell if the proof fails.
 - 2026-07-21: Use Corvus rather than JsonSchema.Net for JSON Schema 2020-12 validation because Corvus is Apache-2.0 and generates typed C#, while JsonSchema.Net's current binary EULA can impose a revenue-related maintenance fee.
+- 2026-07-21: Use a repo-local Windows toolchain rather than a devcontainer because the primary proof requires an interactive WinUI desktop, MSIX identity, UI Automation, Steam, and Assetto Corsa. Reserve containers for optional non-UI CI work.
 
 ## Risks and recovery
 
@@ -104,7 +106,7 @@ Implementation verification commands will replace the placeholders in `harness/p
 Baseline result on 2026-07-21 using the Codex workspace Python runtime:
 
 - `tools/harness_check.py`: 0 errors, 1 expected warning for placeholder setup/start/test commands pending stack selection.
-- `python -m unittest discover -s tests`: 15 tests passed.
+- `python -m unittest discover -s tests`: 18 tests passed.
 - `git diff --check`: passed; Git reported only the repository's expected LF-to-CRLF checkout notices.
 
 ## Outcome notes

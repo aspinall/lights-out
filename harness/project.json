@@ -3,7 +3,7 @@
   "name": "lights-out",
   "summary": "A desktop season manager that turns data-driven race series into playable Assetto Corsa championships.",
   "commands": {
-    "setup": "replace-with-setup-command",
+    "setup": "powershell -NoProfile -ExecutionPolicy Bypass -File eng/bootstrap.ps1",
     "start": "replace-with-start-command",
     "test": "replace-with-test-command",
     "verify": "python tools/harness_check.py"

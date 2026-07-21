@@ -66,7 +66,29 @@ Repository documentation is the source of truth:
 
 ## Development
 
-The selected application stack is C# on .NET 10 LTS with WinUI 3, EF Core and SQLite, and Corvus JSON Schema validation. The local machine still needs the .NET 10 SDK, and setup, start, and application-test commands remain pending until the walking-skeleton proof makes them executable.
+The selected application stack is C# on .NET 10 LTS with WinUI 3, EF Core and SQLite, and Corvus JSON Schema validation. Development uses an isolated repo-local SDK and package cache; it does not require a machine-wide .NET or Visual Studio installation.
+
+Prepare the environment from PowerShell:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File eng/bootstrap.ps1
+```
+
+The bootstrap reads the exact SDK version from `global.json` and installs it under the ignored `.tools/` directory. It also isolates the .NET CLI home, NuGet packages, HTTP cache, telemetry settings, and build temporary files. It does not modify the registry or persistent user or machine `PATH`.
+
+For an interactive terminal whose `dotnet` command uses only the repo-local environment:
+
+```powershell
+powershell -NoProfile -NoExit -ExecutionPolicy Bypass -File eng/shell.ps1
+```
+
+For scripts and one-off commands, use the wrapper without entering a shell:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File eng/dotnet.ps1 --info
+```
+
+Delete `.tools/` to remove the downloaded SDK and all isolated caches. Start and application-test commands remain pending until the walking-skeleton application is scaffolded.
 
 The repository knowledge harness currently requires Python 3 and can be verified with:
 

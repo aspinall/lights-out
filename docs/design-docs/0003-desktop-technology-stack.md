@@ -8,7 +8,7 @@ Last verified: 2026-07-21
 
 Lights Out needs a concrete stack for a local-first Windows desktop application that owns season state, validates portable JSON definitions, controls a native simulator process, and exposes an accessible user interface. The first release targets vanilla Assetto Corsa on Windows only. Cross-platform UI and a hosted service are not product requirements.
 
-The stack must support the dependency boundaries in `ARCHITECTURE.md`, SQLite migrations, deterministic non-UI tests, JSON Schema 2020-12, Windows process and filesystem APIs, UI Automation, and an installable Windows build. The repository currently has no .NET SDK, application scaffold, or canonical application commands.
+The stack must support the dependency boundaries in `ARCHITECTURE.md`, SQLite migrations, deterministic non-UI tests, JSON Schema 2020-12, Windows process and filesystem APIs, UI Automation, and an installable Windows build. The repository has a pinned, non-admin SDK environment but no application scaffold or canonical application commands yet.
 
 ## Decision
 
@@ -62,7 +62,7 @@ The desktop project is the only project allowed to reference WinUI. EF Core is c
 
 ## Consequences and risks
 
-- The team needs the .NET 10 SDK and WinUI workload; the current machine has only older runtimes and no SDK.
+- The repo-local bootstrap supplies the .NET 10 SDK without a machine-wide installation. Developers still need supported Windows, PowerShell, download access during bootstrap, and disk space for the isolated toolchain and caches.
 - WinUI types require a XAML application/UI thread, so UI logic must remain thin. Most behavior belongs in ordinary .NET libraries that `dotnet test` can run without a graphical session.
 - WinUI and Windows App SDK servicing moves faster than .NET LTS. Central version pins and a packaged smoke test make upgrades explicit.
 - MSIX identity, signing, app-data locations, and full-trust process launch add release work. The proof must launch the verified Assetto Corsa handoff from an installed package, not only from Visual Studio.
