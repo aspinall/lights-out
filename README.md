@@ -34,7 +34,7 @@ A series definition describes racing concepts rather than machine-specific paths
 
 ## Current status
 
-Lights Out is in the product-definition and architecture phase. The product specification, application boundaries, first vertical-slice plan, and fictional four-round MX-5 Sprint Cup reference fixture are established. Vanilla Assetto Corsa on Windows is the first simulator target; its exact compatibility contract and the desktop technology stack are the next technical decisions.
+Lights Out is in the architecture and compatibility-proof phase. The product specification, application boundaries, first vertical-slice plan, fictional four-round MX-5 Sprint Cup fixture, vanilla Assetto Corsa launch contract, and desktop stack are established.
 
 The first vertical slice will run the [Lights Out MX-5 Sprint Cup](tests/fixtures/reference-series/README.md) from definition import through a launched race, accepted result, and updated standings. Broader rule and installation support will be added from verified examples after that complete path works.
 
@@ -60,12 +60,13 @@ Repository documentation is the source of truth:
 | [Season simulation spec](docs/product-specs/season-simulation.md) | User journeys, requirements, lifecycle, and acceptance criteria |
 | [Architecture](ARCHITECTURE.md) | System context, dependency direction, and boundary rules |
 | [Architecture decision](docs/design-docs/0001-local-first-season-architecture.md) | Persistence, integration, recovery, trust boundaries, and tradeoffs |
+| [Desktop stack decision](docs/design-docs/0003-desktop-technology-stack.md) | C#/.NET, WinUI, SQLite, JSON validation, testing, and packaging choices |
 | [Active implementation plan](docs/exec-plans/active/2026-07-21-season-vertical-slice.md) | Milestones, risks, decisions, and verification for the first playable slice |
 | [Documentation index](docs/README.md) | Quality, reliability, security, design, and engineering guidance |
 
 ## Development
 
-The application stack has not yet been selected, so setup, start, and application-test commands are intentionally pending. Stack selection must demonstrate Windows packaging, accessible desktop UI, SQLite migrations, typed JSON validation, safe process launch, and enforceable dependency boundaries before the repository is structured around it.
+The selected application stack is C# on .NET 10 LTS with WinUI 3, EF Core and SQLite, and Corvus JSON Schema validation. The local machine still needs the .NET 10 SDK, and setup, start, and application-test commands remain pending until the walking-skeleton proof makes them executable.
 
 The repository knowledge harness currently requires Python 3 and can be verified with:
 

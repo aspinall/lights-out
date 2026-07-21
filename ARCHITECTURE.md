@@ -14,7 +14,7 @@ series JSON ----> Lights Out desktop app ----> application-owned SQLite and arti
 
 The desktop application is initially the only deployment unit and requires no online account or service. Series definitions, simulator outputs, mods, DLC, and the Assetto Corsa installation are external and untrusted or externally owned. Lights Out owns its database, application storage, staged launch artifacts, and audit history; it does not own or modify source game content.
 
-The detailed decision, recovery model, and rejected alternatives are recorded in [Design 0001](docs/design-docs/0001-local-first-season-architecture.md).
+The detailed decision, recovery model, and rejected alternatives are recorded in [Design 0001](docs/design-docs/0001-local-first-season-architecture.md). The concrete C#/.NET 10 and WinUI 3 mapping is recorded in [Design 0003](docs/design-docs/0003-desktop-technology-stack.md).
 
 ## Dependency model
 
@@ -34,7 +34,22 @@ providers ---------------+
 - Cross-cutting capabilities enter through explicit `providers` interfaces.
 - Shared utilities remain small, domain-neutral, and free of business policy.
 
-Adapt the names to the chosen stack in a design record, but retain explicit, mechanically enforceable dependency directions.
+The selected .NET project mapping is:
+
+```text
+LightsOut.Domain
+       |
+       v
+LightsOut.Application <---- LightsOut.Infrastructure
+       ^                           SQLite / EF Core
+       |
+LightsOut.AssettoCorsa
+       ^
+       |
+LightsOut.Desktop (WinUI composition root)
+```
+
+Project references may point only toward `Domain` and `Application`; `Desktop` composes the concrete adapters. `Domain` has no platform dependencies, only `Desktop` references WinUI, EF Core stays in `Infrastructure`, and Assetto Corsa details stay in `AssettoCorsa`. Architecture tests enforce these rules.
 
 For Lights Out, the planned mapping is:
 
@@ -69,4 +84,3 @@ domain types -> definition/config -> repository ports -> application services ->
 ## Architectural changes
 
 Any change to deployment units, trust boundaries, public contracts, persistence ownership, or dependency direction requires a design record in `docs/design-docs/`. Add a structural test or lint when the rule can be checked mechanically.
-
