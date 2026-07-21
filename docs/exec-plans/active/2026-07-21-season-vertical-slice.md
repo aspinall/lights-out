@@ -38,7 +38,7 @@ No application framework has been selected and the canonical setup, start, and t
 ## Steps
 
 - [ ] Complete the reference fixture set: the MX-5 Sprint Cup definition, normalized results, and expected standings are checked in; installation and launch-plan fixtures remain after the Assetto Corsa contract research.
-- [ ] Research and record the vanilla Assetto Corsa installation, configuration, launch, and result contracts; define the initial Windows/Steam compatibility matrix without Content Manager.
+- [ ] Complete the vanilla Assetto Corsa compatibility spike: read-only installation, configuration, launcher, and output discovery plus golden fixtures are complete; controlled direct launch, real race-result capture, restoration proof, and clean-install repetition remain.
 - [ ] Select the desktop stack with a short proof covering Windows packaging, accessible UI, SQLite migrations, typed JSON validation, process launch, and structural dependency checks.
 - [ ] Replace all placeholder canonical commands in `harness/project.json`, add CI coverage, and enforce dependency direction.
 - [ ] Implement the versioned series schema, two-phase validation, normalized definition model, and actionable diagnostics.
@@ -58,6 +58,10 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Replaced the scaffold README with the Lights Out product flow, current status, architecture summary, documentation map, and development entry points.
 - 2026-07-21: Selected the fictional four-round Lights Out MX-5 Sprint Cup as the reference series and added its draft v1 definition, normalized results, deterministic expected standings, and fixture integrity tests.
 - 2026-07-21: Selected vanilla Assetto Corsa on Windows as the first simulator compatibility target; Content Manager support is deferred to a separate future adapter.
+- 2026-07-21: Inspected the observed Steam installation and vanilla launcher read-only; recorded build evidence, exact reference content/layout/skin identifiers, `race.ini` structure, fixed output locations, and the launcher's internal `ac://start` to `acs.exe` lifecycle.
+- 2026-07-21: Added sanitized vanilla installation, launch-plan, materialized INI, and observed output fixtures with automated mapping and contract tests. Direct external launch remains explicitly unverified pending a controlled interactive run.
+- 2026-07-21: Controlled launch attempt showed that plain `acs.exe` invocation is redirected by Steam to the vanilla launcher, which rewrites `race.ini`; no result was produced, and the exact original configuration was restored by verified hash. A Steam-app-environment retry stopped safely at preflight because redirected launcher processes remained active.
+- 2026-07-21: After closing redirected launcher processes, the retry with child-only `SteamAppId` and `SteamGameId` set to `244210` launched `acs.exe` directly, consumed the staged qualifying/race config, produced a new result, and restored the exact original config. The zero-lap classification is retained as a rejection fixture.
 
 ## Decision log
 
@@ -67,6 +71,10 @@ No application framework has been selected and the canonical setup, start, and t
 - 2026-07-21: Keep exact Assetto Corsa configuration and result details out of the domain until verified against an explicit compatibility target.
 - 2026-07-21: Use the official Mazda MX-5 Cup and four compact official circuits for the reference series; keep content references logical until verified installation identifiers are captured by the simulator-adapter research.
 - 2026-07-21: Target vanilla Assetto Corsa before third-party launchers so the first integration contract depends only on the simulator and official Steam installation.
+- 2026-07-21: Stage only user-data `cfg/race.ini`, preserve and hash its exact previous bytes, restore conservatively after process/result handling, and never mutate Steam-owned configuration or content.
+- 2026-07-21: Treat direct `acs.exe` launch as the candidate external handoff, not an established contract, because the installed vanilla launcher exposes only a private embedded `ac://start` handler.
+- 2026-07-21: Reject plain direct `acs.exe` invocation after observed Steam redirection. Test a child-only `SteamAppId`/`SteamGameId=244210` context next; do not create `steam_appid.txt` or otherwise modify the Steam installation.
+- 2026-07-21: Adopt child-only `SteamAppId`/`SteamGameId=244210` plus direct 64-bit `acs.exe` as the verified vanilla handoff for the observed profile. Never accept a race result solely because `raceResult` is present; require evidence of completed laps and configured completion rules.
 
 ## Risks and recovery
 

@@ -1,0 +1,35 @@
+{
+  "fixtureVersion": 1,
+  "observedOn": "2026-07-21",
+  "attempts": [
+    {
+      "id": "direct-acs-without-steam-context",
+      "requestedExecutable": "acs.exe",
+      "steamAppEnvironment": false,
+      "outcome": "redirected-to-vanilla-launcher",
+      "observations": [
+        "The requested process exited without starting a simulator session.",
+        "Steam started AssettoCorsa.exe and the vanilla launcher initialized.",
+        "The launcher rewrote staged race.ini values from its saved UI state.",
+        "race_out.json was unchanged.",
+        "The exact pre-attempt race.ini bytes were restored and hash-verified."
+      ]
+    },
+    {
+      "id": "direct-acs-with-steam-environment",
+      "requestedExecutable": "acs.exe",
+      "steamAppEnvironment": true,
+      "steamAppId": "244210",
+      "outcome": "preflight-blocked-then-verified",
+      "observations": [
+        "Existing AssettoCorsa.exe launcher processes were still running.",
+        "The preflight stopped before staging or launching.",
+        "After those processes were closed, the retry started acs.exe directly without the vanilla launcher.",
+        "The simulator consumed the staged multi-session race.ini and left it byte-for-byte unchanged.",
+        "A new two-session race_out.json was produced after process exit.",
+        "The exact pre-attempt race.ini bytes were restored and hash-verified.",
+        "The observed race classification contained zero completed laps and must not be accepted as a completed result."
+      ]
+    }
+  ]
+}

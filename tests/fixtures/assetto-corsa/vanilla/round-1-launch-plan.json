@@ -1,0 +1,31 @@
+{
+  "fixtureVersion": 1,
+  "adapter": "vanilla-assetto-corsa",
+  "seriesId": "lights-out-mx5-sprint-cup",
+  "eventId": "round-1-magione",
+  "installationProfile": {
+    "steamAppId": "244210",
+    "executable": "acs.exe",
+    "requiresSteamRunning": true,
+    "contentManagerRequired": false
+  },
+  "staging": {
+    "target": "%USER_DATA%/cfg/race.ini",
+    "fixture": "round-1-race.ini",
+    "restoreOriginalAfterProcessExit": true
+  },
+  "simulatorValues": {
+    "model": "ks_mazda_mx5_cup",
+    "track": "magione",
+    "configTrack": "",
+    "weather": "3_clear",
+    "sunAngle": 0,
+    "cars": 12,
+    "sessions": [
+      { "index": 0, "type": 2, "name": "Qualifying", "durationMinutes": 10, "spawnSet": "PIT" },
+      { "index": 1, "type": 3, "name": "Race", "laps": 12, "spawnSet": "START" }
+    ]
+  },
+  "expectedOutput": "%USER_DATA%/out/race_out.json",
+  "launchStatus": "requires-controlled-verification"
+}

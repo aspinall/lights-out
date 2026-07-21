@@ -1,0 +1,18 @@
+{
+  "track": "topgear",
+  "number_of_sessions": 0,
+  "players": [
+    {
+      "name": "Player Driver",
+      "car": "ks_mazda_miata",
+      "skin": "14_montego_blue_lim"
+    }
+  ],
+  "sessions": [],
+  "extras": [
+    {
+      "name": "bestlap",
+      "time": 105501
+    }
+  ]
+}

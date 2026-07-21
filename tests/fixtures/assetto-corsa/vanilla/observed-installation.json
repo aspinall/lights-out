@@ -1,0 +1,110 @@
+{
+  "fixtureVersion": 1,
+  "observedOn": "2026-07-21",
+  "platform": {
+    "windowsBuild": "26200.8894",
+    "steamAppId": "244210",
+    "steamBuildId": "14923034",
+    "vanillaLauncherVersion": "0.18.0115.5097",
+    "simulatorExecutable": "acs.exe"
+  },
+  "roots": {
+    "installation": "%STEAM_LIBRARY%/steamapps/common/assettocorsa",
+    "userData": "%REDIRECTED_DOCUMENTS%/Assetto Corsa"
+  },
+  "outputs": {
+    "launchConfig": "cfg/race.ini",
+    "result": "out/race_out.json",
+    "warnings": "out/warnings.json",
+    "laps": "out/laps.ini"
+  },
+  "contentMappings": {
+    "cars": [
+      {
+        "logicalRef": "mazda-mx5-cup",
+        "model": "ks_mazda_mx5_cup",
+        "displayName": "Mazda MX5 Cup",
+        "sentinels": [
+          { "path": "content/cars/ks_mazda_mx5_cup/data.acd", "observedLength": 151826 },
+          { "path": "content/cars/ks_mazda_mx5_cup/ui/ui_car.json", "observedLength": 1333 }
+        ]
+      }
+    ],
+    "tracks": [
+      {
+        "logicalTrackRef": "magione",
+        "logicalLayoutRef": "full",
+        "track": "magione",
+        "configTrack": "",
+        "displayName": "Magione",
+        "lengthMetres": 2507,
+        "pitboxes": 18,
+        "sentinels": [
+          "content/tracks/magione/models.ini",
+          "content/tracks/magione/ui/ui_track.json"
+        ]
+      },
+      {
+        "logicalTrackRef": "vallelunga",
+        "logicalLayoutRef": "club",
+        "track": "ks_vallelunga",
+        "configTrack": "club_circuit",
+        "displayName": "Vallelunga - Club",
+        "lengthMetres": 1746,
+        "pitboxes": 24,
+        "sentinels": [
+          "content/tracks/ks_vallelunga/models_club_circuit.ini",
+          "content/tracks/ks_vallelunga/ui/club_circuit/ui_track.json"
+        ]
+      },
+      {
+        "logicalTrackRef": "silverstone",
+        "logicalLayoutRef": "national",
+        "track": "ks_silverstone",
+        "configTrack": "national",
+        "displayName": "Silverstone - National",
+        "lengthMetres": 2638,
+        "pitboxes": 24,
+        "sentinels": [
+          "content/tracks/ks_silverstone/models_national.ini",
+          "content/tracks/ks_silverstone/ui/national/ui_track.json"
+        ]
+      },
+      {
+        "logicalTrackRef": "brands-hatch",
+        "logicalLayoutRef": "indy",
+        "track": "ks_brands_hatch",
+        "configTrack": "indy",
+        "displayName": "Brands Hatch - Indy",
+        "lengthMetres": 1929,
+        "pitboxes": 24,
+        "sentinels": [
+          "content/tracks/ks_brands_hatch/models_indy.ini",
+          "content/tracks/ks_brands_hatch/ui/indy/ui_track.json"
+        ]
+      }
+    ],
+    "liveries": [
+      { "logicalRef": "cup-01", "skin": "00_official" },
+      { "logicalRef": "cup-02", "skin": "01_cup_07" },
+      { "logicalRef": "cup-03", "skin": "02_cup_23" },
+      { "logicalRef": "cup-04", "skin": "03_cup_24" },
+      { "logicalRef": "cup-05", "skin": "04_cup_29" },
+      { "logicalRef": "cup-06", "skin": "05_cup_36" },
+      { "logicalRef": "cup-07", "skin": "06_cup_55" },
+      { "logicalRef": "cup-08", "skin": "07_cup_56" },
+      { "logicalRef": "cup-09", "skin": "08_cup_57" },
+      { "logicalRef": "cup-10", "skin": "09_cup_58" },
+      { "logicalRef": "cup-11", "skin": "10_cup_60" },
+      { "logicalRef": "cup-12", "skin": "11_cup_61" }
+    ],
+    "weather": [
+      { "logicalRef": "clear", "name": "3_clear" }
+    ],
+    "timeOfDay": [
+      { "logicalValue": "13:00", "sunAngle": 0 },
+      { "logicalValue": "14:00", "sunAngle": 16 },
+      { "logicalValue": "15:00", "sunAngle": 32 }
+    ]
+  }
+}
